@@ -1,3 +1,56 @@
-.content {
-  color: red;
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.background-image {
+  height: 100vh;
+  background: url('./images/engin-akyurt-IfAb0bjhHlc-unsplash.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.background-dim {
+  background-color: rgba(0, 0, 0, 0.438);
+  height: 100%;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  color: white;
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.nav > ul {
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-items {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 800px) { 
+  .header {
+    flex-direction: row;
+  }
 }

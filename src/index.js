@@ -1,44 +1,22 @@
 import './style.css';
-import a from './main-page';
-
-class DomManipulation {
-  static createElementWithClass(elementName, className) {
-    const element = document.createElement(elementName);
-    element.classList.add(className);
-    return element;
-  }
-
-  static wrapElement(element) {
-    const wrapper = DomManipulation.createElementWithClass('div', 'wrapper');
-    wrapper.appendChild(element);
-    return wrapper;
-  }
-
-  static createListElement(listItems, listItemClassName) {
-    const list = document.createElement('ul');
-    listItems.forEach(item => {
-      const element = DomManipulation.createElementWithClass('li', listItemClassName);
-      element.textContent = item;
-      list.appendChild(element);
-    });
-    return list;
-  }
-}
+import { DomManipulation } from './utility';
 
 const header = (() => {
   const _header = DomManipulation.createElementWithClass('div', 'header');
+  const _wrapper = DomManipulation.createElementWithClass('div', 'wrapper');
 
   const _headerLogo = DomManipulation.createElementWithClass('div', 'logo');
   _headerLogo.textContent = "Restaurant";
 
-  _header.appendChild(_headerLogo);
+  _wrapper.appendChild(_headerLogo);
+  _header.appendChild(_wrapper);
 
   const _headerNav = DomManipulation.createElementWithClass('div', 'nav');
   const _navItems = ['Home', 'Menu', 'About', 'Contact Us'];
-  const _navList = DomManipulation.createListElement(_navItems, 'nav-items');
+  const _navList = DomManipulation.createListElement(_navItems, 'nav-items', 0);
 
   _headerNav.appendChild(_navList);
-  _header.appendChild(_headerNav);
+  _wrapper.appendChild(_headerNav);
 
   const getHeader = () => {
     return _header;
@@ -61,7 +39,7 @@ const dom = (() => {
   appendElementToContent(_backgroundImage);
   _backgroundImage.appendChild(_dim);
   
-  _dim.appendChild(DomManipulation.wrapElement(header.getHeader()));
+  _dim.appendChild(header.getHeader());
 
   return {
     appendElementToContent,

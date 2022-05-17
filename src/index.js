@@ -1,5 +1,7 @@
 import './style.css';
 import { DomManipulation } from './utility';
+import { home } from './main-page';
+
 
 const header = (() => {
   const _header = DomManipulation.createElementWithClass('div', 'header');
@@ -40,8 +42,9 @@ const dom = (() => {
   _backgroundImage.appendChild(_dim);
   
   _dim.appendChild(header.getHeader());
+  _dim.appendChild(home.getHome());
 
   return {
-    appendElementToContent,
+    
   }
 })();

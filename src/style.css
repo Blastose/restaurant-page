@@ -8,6 +8,11 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: red;
+}
+
 .background-image {
   height: 100vh;
   background: url('./images/engin-akyurt-IfAb0bjhHlc-unsplash.jpg') no-repeat center center fixed;
@@ -19,7 +24,7 @@ body {
   height: 100%;
 
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 .wrapper {
@@ -67,6 +72,14 @@ body {
 
 .active {
   color: var(--nav-highlight-color);
+}
+
+.footer {
+  display: grid;
+  color: white;
+  background-color: rgb(27, 27, 27);
+
+  padding: 16px 32px;
 }
 
 .home {

@@ -4,7 +4,7 @@ import { home } from './main-page';
 
 
 const header = (() => {
-  const _header = DomManipulation.createElementWithClass('div', 'header');
+  const _header = DomManipulation.createElementWithClass('header', 'header');
   const _wrapper = DomManipulation.createElementWithClass('div', 'wrapper');
 
   const _headerLogo = DomManipulation.createElementWithClass('div', 'logo');
@@ -29,6 +29,21 @@ const header = (() => {
   }
 })();
 
+const footer = (() => {
+  const _footer = DomManipulation.createElementWithClass('footer', 'footer');
+  const _imageAttribution = DomManipulation.createElementWithClass('div', 'image-credit');
+  _imageAttribution.innerHTML = 'Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/t/food-drink?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+
+  _footer.appendChild(_imageAttribution);
+
+  const getFooter = () => {
+    return _footer;
+  }
+  return {
+    getFooter,
+  }
+})();
+
 const dom = (() => {
   const _content = document.querySelector('.content');
   const _backgroundImage = DomManipulation.createElementWithClass('div', 'background-image');
@@ -43,6 +58,7 @@ const dom = (() => {
   
   _dim.appendChild(header.getHeader());
   _dim.appendChild(home.getHome());
+  _dim.appendChild(footer.getFooter());
 
   return {
     

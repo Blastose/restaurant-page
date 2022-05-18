@@ -168,7 +168,7 @@ a {
 }
 
 .item-highlight {
-  background-color: rgb(199, 50, 50);
+  background-color: rgb(156, 53, 53);
   grid-row: 1 / 5;
 }
 
@@ -182,7 +182,7 @@ a {
   background-color: rgb(255, 194, 194);
 }
 
-@media only screen and (min-width: 800px) { 
+@media only screen and (min-width: 600px) { 
   .header > .wrapper {
     flex-direction: row;
   }
@@ -201,6 +201,10 @@ a {
 
   .home-text-small {
     margin-top: auto;
+  }
+
+  .menu-items-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
   }
 
   .menu-button-container {

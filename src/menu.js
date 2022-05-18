@@ -9,7 +9,7 @@ class MenuItemMaker {
     const itemHighlight = DomManipulation.createElementWithClass('div', 'item-highlight');
     itemName.textContent = menuItem.name;
     const itemImage = DomManipulation.createElementWithClass('div', 'item-image');
-    itemImage.style.background = image;
+    itemImage.style.background = `url('./${menuItem.fileImage}')`;
     const itemDescription = DomManipulation.createElementWithClass('div', 'item-description');
     itemDescription.textContent = menuItem.description;
     const itemPrice = DomManipulation.createElementWithClass('div', 'item-price');

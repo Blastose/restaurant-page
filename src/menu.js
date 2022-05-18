@@ -9,7 +9,7 @@ class MenuItemMaker {
     const itemHighlight = DomManipulation.createElementWithClass('div', 'item-highlight');
     itemName.textContent = menuItem.name;
     const itemImage = DomManipulation.createElementWithClass('div', 'item-image');
-    itemImage.style.background = `url('./${menuItem.fileImage}')`;
+    // itemImage.style.background = `url('./images/${menuItem.fileImage}')`;
     const itemDescription = DomManipulation.createElementWithClass('div', 'item-description');
     itemDescription.textContent = menuItem.description;
     const itemPrice = DomManipulation.createElementWithClass('div', 'item-price');
@@ -29,7 +29,7 @@ class MenuItemMaker {
 const menu = (() => {
   const _menu = DomManipulation.createElementWithClass('div', 'menu');
   
-  const _menuWrapper = DomManipulation.createElementWithClass('div', 'menu-wrapper');
+  const _menuWrapper = DomManipulation.createElementWithClass('div', 'wrapper');
   const _menuText = DomManipulation.createElementWithClass('div', 'menu-text');
   _menuText.textContent = "Menu";
   _menu.appendChild(_menuWrapper);

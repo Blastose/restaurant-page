@@ -28,13 +28,17 @@ class MenuItemMaker {
 
 const menu = (() => {
   const _menu = DomManipulation.createElementWithClass('div', 'menu');
+  
+  const _menuWrapper = DomManipulation.createElementWithClass('div', 'menu-wrapper');
   const _menuText = DomManipulation.createElementWithClass('div', 'menu-text');
   _menuText.textContent = "Menu";
-  _menu.appendChild(_menuText);
+  _menu.appendChild(_menuWrapper);
+  _menuWrapper.appendChild(_menuText);
 
   const _menuItemsContainer = DomManipulation.createElementWithClass('div', 'menu-items-container');
-  _menu.appendChild(_menuItemsContainer);
+  _menuWrapper.appendChild(_menuItemsContainer);
   
+
   menuItems.items.forEach(item => {
     _menuItemsContainer.appendChild(MenuItemMaker.makeHtml(item));
   });

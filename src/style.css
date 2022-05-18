@@ -176,7 +176,7 @@ a {
 }
 
 .item-image {
-  background-color: rgba(255, 194, 194, 0.336);
+  background-color: rgba(255, 0, 0, 0.075);
 }
 
 .about,
@@ -197,6 +197,22 @@ a {
   background-color: rgba(0, 0, 0, 0.301);
   padding: 16px;
   border-radius: 12px;
+}
+
+.menu {
+  padding: 16px;
+}
+
+.menu > .wrapper {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 16px;
+  background-color: rgba(0, 0, 0, 0.301);
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
 }
 
 .contact-us-form {

@@ -51,18 +51,26 @@ const dom = (() => {
   const _backgroundImage = DomManipulation.createElementWithClass('div', 'background-image');
   const _dim = DomManipulation.createElementWithClass('div', 'background-dim');
   const _pageContents = [home.getHome, menu.getMenu, about.getAbout, contactUs.getContactUs];
+  const _menuButton = home.getHome().querySelector('.menu-button');
+  _menuButton.addEventListener('click', () => {
+    changePageContents(_navItemElements[1], menu.getMenu());
+  }); 
 
   const _navItemElements = header.getHeader().querySelectorAll('.nav-items');
   console.log(_navItemElements);
   _navItemElements.forEach((item, index) => {
     item.addEventListener('click', () => {
-      DomManipulation.removeClassFromElementsArray(_navItemElements, 'active');
-      item.classList.add('active');
-
-      removePageContent();
-      addPageContent(_pageContents[index]());
+      changePageContents(item, _pageContents[index]());
     });
   });
+
+  const changePageContents = (activePage, pageContents) => {
+    DomManipulation.removeClassFromElementsArray(_navItemElements, 'active');
+    activePage.classList.add('active');
+
+    removePageContent();
+    addPageContent(pageContents);
+  };
 
   const appendElementToContent = (element) => {
     _content.appendChild(element);

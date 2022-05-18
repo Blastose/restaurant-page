@@ -3,6 +3,7 @@ import { DomManipulation } from './utility';
 import { home } from './main-page';
 import { menu } from './menu';
 import { about } from './about';
+import { contactUs } from './contact-us';
 
 const header = (() => {
   const _header = DomManipulation.createElementWithClass('header', 'header');
@@ -60,7 +61,8 @@ const dom = (() => {
   _dim.appendChild(header.getHeader());
   // _dim.appendChild(home.getHome());
   // _dim.appendChild(menu.getMenu());
-  _dim.appendChild(about.getAbout());
+  // _dim.appendChild(about.getAbout());
+  _dim.appendChild(contactUs.getContactUs());
 
   _dim.appendChild(footer.getFooter());
 

@@ -139,7 +139,8 @@ a {
 }
 
 .menu-text,
-.about-text {
+.about-text,
+.contact-us-text {
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -177,15 +178,17 @@ a {
   background-color: rgba(255, 194, 194, 0.336);
 }
 
-.about {
+.about,
+.contact-us {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 16px;
+  padding: 16px;
   color: white;
 }
 
-.about > .wrapper {
+.about > .wrapper,
+.contact-us > .wrapper {
   display: flex;
   max-width: 750px;
   flex-direction: column;
@@ -193,6 +196,19 @@ a {
   background-color: rgba(0, 0, 0, 0.301);
   padding: 16px;
   border-radius: 12px;
+}
+
+.contact-us-form {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 @media only screen and (min-width: 600px) { 

@@ -23,6 +23,12 @@ class DomManipulation {
     });
     return list;
   }
+
+  static removeClassFromElementsArray(elements, className) {
+    elements.forEach(element => {
+      element.classList.remove(className);
+    });
+  }
 }
 
 export { DomManipulation }

@@ -50,23 +50,38 @@ const dom = (() => {
   const _content = document.querySelector('.content');
   const _backgroundImage = DomManipulation.createElementWithClass('div', 'background-image');
   const _dim = DomManipulation.createElementWithClass('div', 'background-dim');
+  const _pageContents = [home.getHome, menu.getMenu, about.getAbout, contactUs.getContactUs];
+
+  const _navItemElements = header.getHeader().querySelectorAll('.nav-items');
+  console.log(_navItemElements);
+  _navItemElements.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      DomManipulation.removeClassFromElementsArray(_navItemElements, 'active');
+      item.classList.add('active');
+
+      removePageContent();
+      addPageContent(_pageContents[index]());
+    });
+  });
 
   const appendElementToContent = (element) => {
     _content.appendChild(element);
+  };
+
+  const removePageContent = () => {
+    const _content = _dim.childNodes[1];
+    _dim.removeChild(_content);
+  };
+
+  const addPageContent = (content) => {
+    _dim.insertBefore(content, footer.getFooter());
   }
 
   appendElementToContent(_backgroundImage);
   _backgroundImage.appendChild(_dim);
   
   _dim.appendChild(header.getHeader());
-  // _dim.appendChild(home.getHome());
-  // _dim.appendChild(menu.getMenu());
-  // _dim.appendChild(about.getAbout());
-  _dim.appendChild(contactUs.getContactUs());
-
+  _dim.appendChild(home.getHome());
   _dim.appendChild(footer.getFooter());
 
-  return {
-    
-  }
 })();
